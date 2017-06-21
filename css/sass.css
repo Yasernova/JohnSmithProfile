@@ -1,0 +1,385 @@
+header .hedr .container nav .menu li:after {
+  content: "";
+  height: 0.5px;
+  background: #1abc9c;
+  width: 0px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  transition: all 0.4s ease-in-out; }
+
+body {
+  background: #eee;
+  font-family: raleway;
+  font-size: 1.2em;
+  font-weight: bold;
+  min-height: 5000; }
+
+header {
+  background-image: linear-gradient(rgba(26, 188, 156, 0.01), rgba(26, 188, 156, 0.01)), url(../images/cover.jpg);
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden; }
+  header .cover {
+    background-color: rgba(0, 0, 0, 0.01); }
+  header h1 {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    margin: 0;
+    font-family: playball;
+    font-size: 14em;
+    font-weight: 900;
+    color: #eee;
+    text-shadow: 1px -1px 5px #000; }
+    header h1 span {
+      color: #1abc9c; }
+  header p {
+    position: absolute;
+    text-transform: uppercase;
+    width: 100%;
+    top: 0;
+    font-size: 2em;
+    font-weight: lighter;
+    color: #eee; }
+  header .btn-down {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    text-align: center; }
+    header .btn-down i {
+      color: #eee; }
+      header .btn-down i:hover {
+        color: #1abc9c;
+        cursor: pointer; }
+  header .hedr {
+    color: #eee;
+    text-transform: uppercase;
+    background-color: rgba(52, 65, 70, 0.9);
+    z-index: 10; }
+    header .hedr .container {
+      position: relative;
+      z-index: 20; }
+      header .hedr .container .logo {
+        text-transform: lowercase;
+        float: left;
+        text-shadow: 2px -2px 2px #282830;
+        display: inline-block;
+        padding: 15px 0px;
+        font-family: playball;
+        font-size: 3em;
+        font-weight: 900; }
+        header .hedr .container .logo span {
+          color: #1abc9c; }
+      header .hedr .container nav {
+        display: inline-block;
+        float: right; }
+        header .hedr .container nav .menu {
+          padding: 0;
+          margin: 0; }
+          header .hedr .container nav .menu li {
+            font: 1.3em raleway;
+            list-style: none;
+            float: right;
+            line-height: 79px;
+            margin-left: 20px;
+            position: relative; }
+            header .hedr .container nav .menu li:after {
+              bottom: 10px;
+              height: 3px; }
+            header .hedr .container nav .menu li:hover:after {
+              width: 100%; }
+            header .hedr .container nav .menu li:hover {
+              cursor: pointer; }
+      header .hedr .container .mob-nav {
+        width: 100%;
+        display: none; }
+        header .hedr .container .mob-nav i {
+          float: right;
+          z-index: 1;
+          text-align: right;
+          margin-right: 35px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          display: block; }
+          header .hedr .container .mob-nav i:hover {
+            cursor: pointer;
+            color: #1abc9c; }
+        header .hedr .container .mob-nav .mob-menu {
+          display: none;
+          padding: 0;
+          width: 100%; }
+          header .hedr .container .mob-nav .mob-menu li {
+            width: 100%;
+            text-align: center;
+            color: white;
+            padding: 10px 0px;
+            list-style: none; }
+  header .up {
+    z-index: 50;
+    display: none;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background-color: #344146;
+    transition: all 0.5s ease;
+    opacity: 0.75; }
+    header .up i {
+      color: #eee; }
+    header .up:hover {
+      background-color: #1abc9c;
+      cursor: pointer;
+      border-radius: 50%;
+      opacity: 1; }
+
+.about .container {
+  font-family: raleway;
+  color: #344146;
+  max-width: 970px; }
+  .about .container h1 {
+    opacity: 0;
+    margin-top: 150px;
+    font-size: 4em;
+    color: #344146; }
+    .about .container h1 span {
+      font-family: Helvetica; }
+  .about .container p.text-center {
+    opacity: 0;
+    margin-top: 200px;
+    font-size: 1.5em;
+    font-weight: 700;
+    padding: 0px 50px; }
+  .about .container .spacer {
+    height: 60px; }
+  .about .container .about-img {
+    overflow: hidden; }
+    .about .container .about-img .img-wraper {
+      opacity: 0;
+      width: 100%;
+      margin-left: -60%; }
+      .about .container .about-img .img-wraper img {
+        width: 100%; }
+  .about .container .me {
+    overflow: hidden;
+    padding: 0; }
+    .about .container .me .me-wraper {
+      margin-left: 60%;
+      width: 100%;
+      opacity: 0; }
+      .about .container .me .me-wraper h3 {
+        text-transform: uppercase;
+        color: #1abc9c;
+        font-weight: bolder;
+        margin-top: 0; }
+      .about .container .me .me-wraper p {
+        font-weight: 600;
+        font-size: 1.5em; }
+      .about .container .me .me-wraper div {
+        font-weight: 600;
+        font-size: 1.4em;
+        padding-top: 20px; }
+      .about .container .me .me-wraper a {
+        border-radius: 5px;
+        display: inline-block;
+        text-decoration: none;
+        margin-top: 40px;
+        padding: 15px;
+        background: #1abc9c;
+        color: #eee;
+        font-size: 1.5em; }
+
+.skills {
+  margin-top: 70px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(../images/mac.jpg);
+  background-attachment: fixed;
+  background-position: center center;
+  overflow: hidden; }
+  .skills .container {
+    padding: 0; }
+  .skills h1 {
+    opacity: 0;
+    color: #eee;
+    font-size: 3em;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-top: 300px;
+    margin-bottom: 30px; }
+    .skills h1 span {
+      color: #1abc9c; }
+  .skills .row {
+    margin: 0; }
+    .skills .row .row {
+      padding: 0px 7px;
+      text-align: center; }
+      .skills .row .row canvas {
+        padding: 0;
+        margin-bottom: 350px; }
+      .skills .row .row div h3 {
+        font-weight: bolder;
+        color: #eee;
+        text-transform: uppercase; }
+      .skills .row .row div p {
+        color: #eee;
+        margin: 0;
+        font-size: 1.2em; }
+
+.exp {
+  padding-top: 50px;
+  background: #fff; }
+  .exp .my {
+    width: 75%;
+    margin: 50 auto;
+    text-align: center; }
+    .exp .my h1 {
+      font-size: 4em;
+      text-transform: uppercase;
+      padding-top: 150px;
+      opacity: 0; }
+      .exp .my h1 span {
+        font-family: Helvetica; }
+    .exp .my h3 {
+      text-transform: capitalize;
+      font-weight: 700;
+      padding-top: 150px;
+      opacity: 0; }
+      .exp .my h3 span {
+        font-family: Helvetica; }
+    .exp .my p {
+      font-size: 1.5em;
+      padding-top: 150px;
+      opacity: 0; }
+  .exp .wrkexp .adrs {
+    opacity: 0;
+    margin-top: 150px;
+    text-transform: uppercase;
+    text-align: center; }
+    .exp .wrkexp .adrs h1 {
+      font-weight: 700; }
+    .exp .wrkexp .adrs p {
+      font-size: 1.5em;
+      color: #1abc9c;
+      letter-spacing: 1px; }
+  .exp .wrkexp .exp-item {
+    margin-top: 50px;
+    position: relative;
+    padding-bottom: 30px;
+    margin-bottom: 50px; }
+    .exp .wrkexp .exp-item:before {
+      content: "";
+      position: absolute;
+      bottom: -10%;
+      height: 2px;
+      width: 0%;
+      left: 33%;
+      transform: translateX(-33%);
+      transition: all 1s ease;
+      background: #ddd; }
+    .exp .wrkexp .exp-item .slice {
+      position: relative;
+      overflow: hidden; }
+      .exp .wrkexp .exp-item .slice:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1pt;
+        height: 0%;
+        right: 0;
+        background: #ddd;
+        transition: all 0.5s ease; }
+    .exp .wrkexp .exp-item .slice-show:before {
+      height: 100%; }
+    .exp .wrkexp .exp-item .exp-breif {
+      width: 100%;
+      margin-left: 110%;
+      text-align: right;
+      padding-right: 30; }
+      .exp .wrkexp .exp-item .exp-breif hr {
+        border-top: 1px solid #ccc;
+        width: 45%;
+        margin-right: 0; }
+      .exp .wrkexp .exp-item .exp-breif p:first-child {
+        display: inline;
+        padding-right: 45%;
+        margin-top: 30px;
+        text-transform: uppercase;
+        font-size: 1.2em; }
+      .exp .wrkexp .exp-item .exp-breif P:nth-child(2) {
+        color: #1abc9c; }
+      .exp .wrkexp .exp-item .exp-breif h1 {
+        font-family: Helvetica;
+        font-weight: 900;
+        display: inline-block; }
+        .exp .wrkexp .exp-item .exp-breif h1 span {
+          text-transform: uppercase;
+          text-align: center;
+          display: block;
+          font-family: raleway;
+          font-size: 14px; }
+      .exp .wrkexp .exp-item .exp-breif h1:nth-child(2) {
+        color: #1abc9c; }
+      .exp .wrkexp .exp-item .exp-breif h3 {
+        text-transform: uppercase;
+        color: #1abc9c; }
+    .exp .wrkexp .exp-item .ex-wraper {
+      overflow: hidden; }
+      .exp .wrkexp .exp-item .ex-wraper .exp-details {
+        width: 100%;
+        margin-left: -110%;
+        padding-top: 30px; }
+        .exp .wrkexp .exp-item .ex-wraper .exp-details p {
+          font-size: 1.2em;
+          color: #777; }
+  .exp .wrkexp .hr-show:before {
+    width: 100%; }
+  .exp .wrkexp .no-before:before {
+    display: none; }
+
+@media screen and (max-width: 1170px) {
+  header .menu li {
+    font-size: 1.2em -0.2 !important;
+    margin-left: 30px !important; } }
+@media screen and (max-width: 1000px) {
+  header h1 {
+    font-size: 6.2em; }
+  header p {
+    font-size: 1.2em; }
+  header nav ul {
+    display: none; }
+  header .mob-nav {
+    display: block !important; }
+
+  .spacer {
+    height: 20px !important; }
+
+  .about .container p.text-center {
+    padding: 0px 15px; }
+  .about img {
+    padding-right: 0 !important; }
+  .about .me h3 {
+    margin-top: 40px !important; }
+  .about .me h3, .about .me p {
+    text-align: center; }
+  .about .me div {
+    padding-top: 30px;
+    padding-left: 10px; }
+  .about .me a {
+    text-align: center;
+    width: 250px;
+    display: block !important;
+    margin: 30px auto !important; }
+
+  .skills {
+    margin-top: 30px;
+    padding-bottom: 50px; }
+    .skills .row .tool {
+      text-align: left !important; }
+      .skills .row .tool div {
+        margin-bottom: 20px; }
+        .skills .row .tool div h3 {
+          margin-top: 0px; } }
+
+/*# sourceMappingURL=sass.css.map */
