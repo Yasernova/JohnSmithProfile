@@ -223,6 +223,23 @@ $(document).ready(function(){
   })();
 //================ Galary section ====================
   (function(){
+    var galary = $('.galary'),
+        galIntro = $('.galary .gal-intro'),
+        galBtn = $('.galary .gal-btns'),
+        galItem = $('.gal-item');
+
+    win.on('scroll', function(){
+      if(win.scrollTop()+scrn/8 > galary.offset().top){
+        galIntro.animate({
+          paddingTop: 0,
+          opacity: 1
+        }, 1000, function(){
+          galBtn.css('opacity','1');
+          galItem.css('opacity','1');
+        });
+
+      }
+    });
     var design = $('#design'),
         photography =$('#photography'),
         all = $('#all');
@@ -282,7 +299,18 @@ $(document).ready(function(){
     });
   })();
 //================ Testimonials section ==============
+
+  var tstIntro = $('.testimonials .intro'),
+      tstItems = $('.testimonials .clients-wraper');
+
+  win.on('scroll', function(){
+    if(win.scrollTop()+ scrn/3 > tstIntro.offset().top){
+      tstIntro.animate({marginLeft: 0, opacity: 1}, 500);
+      tstItems.animate({paddingLeft: 0, opacity: 1}, 500);
+    }
+  });
   var crslBtn = $('.carousal span'),
+      clients = $('.clients'),
       crslItem;
 
   crslBtn.on('click', function(){
@@ -291,7 +319,7 @@ $(document).ready(function(){
     else {
       $(this).addClass('active').siblings().removeClass('active');
       mrgnValue = $(this).index();
-      $('.clients').animate({
+      clients.animate({
         marginLeft: mrgnValue*-100+'%'
       },1000);
     }

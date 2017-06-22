@@ -409,6 +409,8 @@ header
   transition: 0.5s ease-in-out
   position: relative
   .gal-intro
+    padding-top: 100px
+    opacity: 0
     text-transform: uppercase
     span
       font-family: helvetica
@@ -418,22 +420,25 @@ header
       font-size: 2*$fontSize
       font-weight: 700
   .gal-btns
+    opacity: 0
     margin: 2rem 0
     display: flex
     justify-content: center
+    transition: all 500ms ease
     button
       margin: 3rem 1rem
       outline: none
       border: none
       @extend %Btn
   .gal-item
+    opacity: 0
     padding: 0px
     box-sizing: border-box
     overflow: hidden
     height: 30rem
     background: #eee
     display: block
-    transition: all 0.2s ease-in-out
+    transition: all 0.5s ease-in-out
     position: relative
     img
       padding: 1px
@@ -512,13 +517,17 @@ header
   padding: 2rem 0
   .intro
     text-transform: uppercase
+    margin-left: -50%
+    opacity: 0
     p
       text-transform: none
   .clients-wraper
+    opacity: 0
     overflow: hidden
     height: 35rem
     width: 80%
     margin: 30px auto 0px
+    padding-left: 30%
     .clients
       width: 100%
       width: 300%
