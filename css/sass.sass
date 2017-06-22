@@ -116,7 +116,6 @@ $mainfont: raleway
     visibility: visible
     width: 200%
     left: -50%
-%imgOverlay
 html
   font-size: 10px
   body
@@ -404,6 +403,7 @@ header
 //================== Galary section ===========
 .galary
   padding-top: 50px
+  padding-bottom: 50px
   margin: 0
   background: #fff
   transition: 0.5s ease-in-out
@@ -505,6 +505,46 @@ header
         top: 1rem
         right: 1rem
         z-index: 1001
+//================== Testimonials section =====
+.testimonials
+  background: $mainColor
+  margin: 0
+  padding: 2rem 0
+  .intro
+    text-transform: uppercase
+    p
+      text-transform: none
+  .clients-wraper
+    overflow: hidden
+    height: 35rem
+    width: 80%
+    margin: 30px auto 0px
+    .clients
+      width: 100%
+      width: 300%
+      .clnt
+        display: inline
+        float: left
+        width: 33.33%
+        height: 100%
+        padding: 0 2rem
+        img
+          display: block
+          margin: 0px auto 20px
+          border-radius: 50%
+          border: 10px solid #eee
+  .carousal
+    span
+      display: inline-block
+      width: 2rem
+      height: 2rem
+      border-radius: 50%
+      background: $darkColor
+    .active
+      background-color: #eee
+
+
+
 
 
 

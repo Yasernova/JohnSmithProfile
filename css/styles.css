@@ -389,6 +389,7 @@ header {
 
 .galary {
   padding-top: 50px;
+  padding-bottom: 50px;
   margin: 0;
   background: #fff;
   transition: 0.5s ease-in-out;
@@ -488,6 +489,42 @@ header {
         top: 1rem;
         right: 1rem;
         z-index: 1001; }
+
+.testimonials {
+  background: #1abc9c;
+  margin: 0;
+  padding: 2rem 0; }
+  .testimonials .intro {
+    text-transform: uppercase; }
+    .testimonials .intro p {
+      text-transform: none; }
+  .testimonials .clients-wraper {
+    overflow: hidden;
+    height: 35rem;
+    width: 80%;
+    margin: 30px auto 0px; }
+    .testimonials .clients-wraper .clients {
+      width: 100%;
+      width: 300%; }
+      .testimonials .clients-wraper .clients .clnt {
+        display: inline;
+        float: left;
+        width: 33.33%;
+        height: 100%;
+        padding: 0 2rem; }
+        .testimonials .clients-wraper .clients .clnt img {
+          display: block;
+          margin: 0px auto 20px;
+          border-radius: 50%;
+          border: 10px solid #eee; }
+  .testimonials .carousal span {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: #344146; }
+  .testimonials .carousal .active {
+    background-color: #eee; }
 
 @media screen and (max-width: 1170px) {
   header .menu li {
