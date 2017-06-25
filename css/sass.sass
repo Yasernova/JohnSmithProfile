@@ -1,5 +1,5 @@
 $mainColor: rgb(26, 188, 156)
-$darkColor: rgb(52,65,70)
+$darkColor: rgb(42,43,44)
 $fontSize: 1.6rem
 $mainfont: raleway
 %brdrNav
@@ -94,6 +94,7 @@ $mainfont: raleway
 %Btn
   background-color: $mainColor
   padding: 1rem 2rem
+  border: none
   font-size: 2rem
   color: #eee
   position: relative
@@ -116,6 +117,42 @@ $mainfont: raleway
     visibility: visible
     width: 200%
     left: -50%
+%intro
+  h1
+    font-size: 4*$fontSize
+    text-transform: uppercase
+    padding-top: 150px
+    opacity: 0
+    span
+      font-family: Helvetica
+  h3
+    font-size: 3rem
+    text-transform: capitalize
+    font-weight: 700
+    padding-top: 150px
+    opacity: 0
+    span
+      font-family: Helvetica
+%inpt
+  outline: none
+  border: none
+  background-color: #111
+  color: $mainColor
+  width: 80%
+  display: block
+  margin-bottom: 2rem
+  padding: 1rem
+  border-radius: 5px
+  &:focus
+    background-color: $darkColor
+%icon
+  width: 7rem
+  height: 7rem
+  line-height: 7rem
+  text-align: center
+  border-radius: 50%
+  font-size: 4rem
+  background-color: $mainColor
 html
   font-size: 10px
   body
@@ -123,8 +160,41 @@ html
     font-family: $mainfont
     font-size: $fontSize
     font-weight: bold
-    min-height: 20000
-    overflow-x: hidden
+    overflow: hidden
+.preloader
+  background: $mainColor
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 1000
+  padding: 0
+  p
+    font-size: $fontSize*2
+    color: black
+    position: absolute
+    transform: translate(-50%, -50%)
+    top: 70%
+    left: 50%
+  .spiner
+    border: 0.3rem solid #eee
+    border-top: 0.3rem solid $darkColor
+    border-radius: 50%
+    width: 7rem
+    height: 7rem
+    position: absolute
+    top: 50%
+    left: 47%
+    padding: 0
+    margin: 0
+    transform: translate(-50%, -50%)
+    animation: lodin 1s infinite linear
+@keyframes lodin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
 //================== Header Section ===========
 header
   background-image: linear-gradient(rgba(26, 188, 156, 0.05),rgba(26, 188, 156, 0.2)),url(../images/cover.jpg)
@@ -169,7 +239,7 @@ header
   .hedr
     color: #eee
     text-transform: uppercase
-    background-color: rgba(52,65,70, 0.9)
+    background-color: rgba(42,43,44, 0.9)
     z-index: 10
     width: 100%
     .container
@@ -207,6 +277,9 @@ header
               width: 100%
             &:hover
               cursor: pointer
+          .active-nav
+            &:after
+              width: 100%
       .mob-nav
         width: 100%
         display: none
@@ -227,7 +300,6 @@ header
           padding: 0
           width: 100%
           li
-            //line-height: 8rem
             font-size: $fontSize
             width: 100%
             text-align: center
@@ -308,7 +380,7 @@ header
 //================== Skills section ===========
 .skills
   margin-top: 7rem
-  background-image:  linear-gradient(rgba(0, 0, 0,0.85),rgba(0, 0, 0,0.85)),url(../images/mac.jpg)
+  background-image:  linear-gradient(rgba(0, 0, 0,0.75),rgba(0, 0, 0,0.75)),url(../images/mac.jpg)
   background-attachment: fixed
   background-position: center center
   overflow: hidden
@@ -349,20 +421,7 @@ header
     width: 75%
     margin: 50 auto
     text-align: center
-    h1
-      font-size: 4*$fontSize
-      text-transform: uppercase
-      padding-top: 150px
-      opacity: 0
-      span
-        font-family: Helvetica
-    h3
-      text-transform: capitalize
-      font-weight: 700
-      padding-top: 150px
-      opacity: 0
-      span
-        font-family: Helvetica
+    @extend %intro
     p
       font-size: $fontSize+0.3
       padding-top: 150px
@@ -384,21 +443,13 @@ header
 .education
   padding-top: 50px
   .edu-intro
+    @extend %intro
     h1
-      padding-top: 150px
-      opacity: 0
-      text-transform: uppercase
-      font: 4rem Helvetica
+      font-family: helvetica
       span
-        font: 4*$fontSize raleway
+        font-family: raleway
         color: $mainColor
-    h3
-      padding-top: 150px
-      opacity: 0
-      font-size: 2*$fontSize
-      font-weight: 700
-      span
-        font-family: Helvetica
+        font-weight: normal
   @extend %experienceItem
 //================== Galary section ===========
 .galary
@@ -551,38 +602,74 @@ header
       background: $darkColor
     .active
       background-color: #eee
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//================== Contact section ==========
+.contact
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url(../images/contact.jpg)
+  background-attachment: fixed
+  color: #eee
+  padding-bottom: 50px
+  padding-top: 50px
+  .container
+    overflow: hidden
+    width: 80%
+    .intro
+      @extend %intro
+    .info
+      margin-left: -70%
+      opacity: 0
+      div
+        margin-bottom: 3rem
+        i
+          @extend %icon
+          &:before
+            color: #eee
+        p
+          display: inline-block
+          font-family: helvetica
+          font-weight: lighter
+    .contact-form
+      opacity: 0
+      margin-left: 70%
+      input
+        height: 6rem
+        @extend %inpt
+      textarea
+        @extend %inpt
+      button
+        @extend %Btn
+//================== Footer section ==========
+footer
+  padding-bottom: 5rem
+  padding-top: 5rem
+  background: $mainColor
+  i
+    background: #eee
+    overflow: hidden
+    position: relative
+    width: 6rem
+    height: 6rem
+    transition: all 0.5s ease
+    @extend %icon
+    &:before
+      position: absolute
+      top: 60%
+      left: 50%
+      transform: translate(-50%,-50%)
+      color: $mainColor
+      font-size: 5rem
+      height: 100%
+      width: 100%
+    &:first-child
+      &:before
+        font-size: 4rem
+        top: 70%
+    &:nth-child(2)
+      top: 90%
+    &:hover
+      background-color: $darkColor
+      cursor: pointer
+  h3
+    color: white
 
 
 
@@ -636,7 +723,7 @@ header
         display: block !important
         margin: 30px auto !important
   .skills
-    min-height: 900px
+    min-height: 1000px
     margin-top: 30px
     padding-bottom: 50px
     .row

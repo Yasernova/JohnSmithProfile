@@ -3,7 +3,44 @@ $(document).ready(function(){
         /*Global variables*/
   var scrn = document.body.clientHeight,
       win = $(window),
-      body = $('body');
+      body = $('body'),
+      navItem = $('li'),
+      preLoad = $('.preloader');
+
+  win.on('load', function(){
+    preLoad.css({'display': 'none'});
+    body.css('overflow','auto');
+  });
+
+  navItem.on('click',function(){
+    var navLi = $(this);
+    body.animate({scrollTop : $('.'+navLi.attr('id')).offset().top-100}, 1000);
+  });
+  var secAbout = $('section.about'),
+      secSkills = $('section.skills'),
+      secExperience = $('section.experience'),
+      secGalary = $('section.galary'),
+      secTestimonials = $('section.testimonials'),
+      secContact = $('section.contact');
+  win.on('scroll', function(){
+    var winScroll = win.scrollTop();
+    if(win.scrollTop() < secAbout.offset().top-100){
+      $('#home').addClass('active-nav').siblings().removeClass('active-nav');
+    }else if(win.scrollTop() < secSkills.offset().top-100){
+      $('#'+secAbout.attr('data-id')).addClass('active-nav').siblings().removeClass('active-nav');
+    }else if(win.scrollTop() < secExperience.offset().top-100){
+      $('#'+secSkills.attr('data-id')).addClass('active-nav').siblings().removeClass('active-nav');
+    }else if(win.scrollTop() < secGalary.offset().top-100){
+      $('#'+secExperience.attr('data-id')).addClass('active-nav').siblings().removeClass('active-nav');
+    }else if(win.scrollTop() < secTestimonials.offset().top-100){
+      $('#'+secGalary.attr('data-id')).addClass('active-nav').siblings().removeClass('active-nav');
+    }else if(win.scrollTop() < secContact.offset().top-100){
+      $('#'+secTestimonials.attr('data-id')).addClass('active-nav').siblings().removeClass('active-nav');
+    }else if(win.scrollTop() > secContact.offset().top-100){
+      $('#'+secContact.attr('data-id')).addClass('active-nav').siblings().removeClass('active-nav');
+    }
+  });
+
 
 //================ Header positioning ================
   (function(){
@@ -113,7 +150,7 @@ $(document).ready(function(){
       c.font = '80px monospace';
       c.fillText(i+'%', target.width/2, target.width/1.7);
       c.beginPath();
-      c.strokeStyle = 'rgb(52,65,70)';
+      c.strokeStyle = 'rgb(42,43,44)';
       c.arc(target.width/2, target.width/2, target.width/2.3, start, diff+start*1.5, false);
       c.stroke();
       c.beginPath();
@@ -299,31 +336,56 @@ $(document).ready(function(){
     });
   })();
 //================ Testimonials section ==============
+  (function(){
+    var tstIntro = $('.testimonials .intro'),
+        tstItems = $('.testimonials .clients-wraper');
 
-  var tstIntro = $('.testimonials .intro'),
-      tstItems = $('.testimonials .clients-wraper');
+    win.on('scroll', function(){
+      if(win.scrollTop()+ scrn/3 > tstIntro.offset().top){
+        tstIntro.animate({marginLeft: 0, opacity: 1}, 500);
+        tstItems.animate({paddingLeft: 0, opacity: 1}, 500);
+      }
+    });
+    var crslBtn = $('.carousal span'),
+        clients = $('.clients'),
+        crslItem;
 
-  win.on('scroll', function(){
-    if(win.scrollTop()+ scrn/3 > tstIntro.offset().top){
-      tstIntro.animate({marginLeft: 0, opacity: 1}, 500);
-      tstItems.animate({paddingLeft: 0, opacity: 1}, 500);
-    }
-  });
-  var crslBtn = $('.carousal span'),
-      clients = $('.clients'),
-      crslItem;
+    crslBtn.on('click', function(){
 
-  crslBtn.on('click', function(){
+      if($(this).hasClass('active')){}
+      else {
+        $(this).addClass('active').siblings().removeClass('active');
+        mrgnValue = $(this).index();
+        clients.animate({
+          marginLeft: mrgnValue*-100+'%'
+        },1000);
+      }
+    });
+  })();
+//================ Contact section ===================
+  (function(){
+    var intro = $(".contact .intro"),
+        introH1 = $('.contact .intro h1'),
+        introH3 = $('.contact .intro h3'),
+        info = $('.contact .info'),
+        contactForm = $('.contact .contact-form');
+    win.on('scroll', function(){
+      if(win.scrollTop()+scrn/2 > intro.offset().top){
+        introH1.animate({opacity: 1, paddingTop: 0}, 1000);
+        introH3.animate({opacity: 1, paddingTop: 0}, 1000);
+      }
+    });
+    win.on('scroll', function(){
+      if(win.scrollTop()+scrn/2 > info.offset().top){
+        info.animate({opacity: 1, marginLeft: 0}, 1000);
+        contactForm.animate({opacity: 1, marginLeft: 0}, 1000);
+      }
+    });
+  })();
 
-    if($(this).hasClass('active')){}
-    else {
-      $(this).addClass('active').siblings().removeClass('active');
-      mrgnValue = $(this).index();
-      clients.animate({
-        marginLeft: mrgnValue*-100+'%'
-      },1000);
-    }
-  });
 
-
+                  /*Have a nice surfing*/
+                  /*Ahmed Yasser*/
+                  /*23/6/2017*/
+                  /*1st*/
 });

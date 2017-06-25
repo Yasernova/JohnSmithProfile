@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="css\styles.css">
 </head>
 <body>
-  <header>
+  <div class="preloader"><div class="spiner"></div><p>Just a sec..</p></div>
+  <header data-id="home" class="home">
     <div class="cover"></div>
     <div class="header-typo">
       <h1 class='text-center'>john <span>smith</span></h1>
@@ -22,31 +23,33 @@
         <div class="logo">john <span>smith</span></div>
         <nav>
           <ul class='menu'>
-            <li>contact</li>
-            <li>education</li>
-            <li>experience</li>
-            <li>skills</li>
-            <li>about</li>
-            <li>home</li>
+            <li id='contact'>contact</li>
+            <li id='testimonials'>testimonials</li>
+            <li id='galary'>galary</li>
+            <li id='experience'>experience</li>
+            <li id='skills'>skills</li>
+            <li id='about'>about</li>
+            <li id='home' class="active-nav">home</li>
           </ul>
         </nav>
         <div class="mob-nav">
           <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
           <div class= 'clearfix'></div>
           <ul class='mob-menu'>
-            <li>home</li>
-            <li>about</li>
-            <li>skills</li>
-            <li>experience</li>
-            <li>education</li>
-            <li>contacts</li>
+            <li id='home'>home</li>
+            <li id='about'>about</li>
+            <li id='skills'>skills</li>
+            <li id='experience'>experience</li>
+            <li id='galary'>galary</li>
+            <li id='testimonials'>testimonials</li>
+            <li id='contact'>contacts</li>
           </ul>
         </div>
       </div>
     </div>
     <div class='up text-center'><i class="fa fa-chevron-up fa-3x" aria-hidden="true"></i></div>
   </header>
-  <section class="about">
+  <section data-id="about" class="about">
     <div class="container">
       <h1 class="text-center"><span>”</span>About</h1>
       <p class="text-center">
@@ -75,7 +78,7 @@
       </div>
     </div>
   </section>
-  <section class="skills">
+  <section data-id="skills" class="skills">
     <div class="container">
       <h1 class='text-center'>I am <span>good at</span></h1>
       <div class="row wraper">
@@ -140,7 +143,7 @@
       </div>
     </div>
   </section>
-  <section class="experience">
+  <section data-id="experience" class="experience">
     <div class="container">
       <div class="my">
         <h1><span>”</span>my</h1>
@@ -220,7 +223,7 @@
       </div>
     </div>
   </section>
-  <section class="education">
+  <section data-id="education" class="education">
     <div class="container">
       <div class="edu-intro">
         <h1 class="text-center">“<span>Education</span>”</h1>
@@ -272,7 +275,7 @@
       </div>
     </div>
   </section>
-  <section class="galary row">
+  <section data-id="galary" class="galary row">
     <div class="gal-intro">
       <h1 class="text-center"><span>”</span>browse</h1>
       <h3 class="text-center"><span>”</span>MY</h3>
@@ -335,7 +338,7 @@
       <div class="img-holder"><span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span><img src="" alt=""></div>
     </div>
   </section>
-  <section class="testimonials text-center">
+  <section data-id="testimonials" class="testimonials text-center">
     <div class="intro">
       <h1>testimonials</h1>
       <p>Kind words from clients.</p>
@@ -377,6 +380,46 @@
       <span></span>
     </div>
   </section>
+  <section data-id="contact" class="contact">
+    <div class="container">
+      <div class="row">
+        <div class="intro text-center">
+          <h1><span>”</span>contact</h1>
+          <h3><span>”</span>Get</h3>
+        </div>
+        <div class="info col-xs-12 col-md-4">
+          <div>
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <p>8901 Marmora Road, <br>Glasgow, D04 89GR.</p>
+          </div>
+          <div>
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            <p>+1 800 603 6035 <br>+1 800 889 9898</p>
+          </div>
+          <div>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <p>mail@demolink.org</p>
+          </div>
+        </div>
+        <div class="contact-form col-xs-12 col-md-8">
+          <input type="text" placeholder="Name:">
+          <input type="text" placeholder="E-mail:">
+          <textarea name="" id="" cols="30" rows="10" placeholder="Message:"></textarea>
+          <button>Send Message</button>
+        </div>
+      </div>
+      </div>
+  </section>
+  <footer>
+    <div class="text-center">
+      <i class="fa fa-google-plus" aria-hidden="true"></i>
+      <i class="fa fa-facebook" aria-hidden="true"></i>
+      <i class="fa fa-twitter" aria-hidden="true"></i>
+      <i class="fa fa-dribbble" aria-hidden="true"></i>
+      <h3>JOHN SMITH</h3>
+      <p>&#169; 2017 Resume. All Rights Reserved.</p>
+    </div>
+  </footer>
 
   <script src='js\jquery-3.2.0.min.js'></script>
   <script src='js\jquery-ui.min.js'></script>

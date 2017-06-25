@@ -85,20 +85,21 @@ header .hedr .container nav .menu li:after {
 .experience .wrkexp .no-before:before, .education .no-before:before {
   display: none; }
 
-.about .container .me .me-wraper a, .galary .gal-btns button {
+.about .container .me .me-wraper a, .galary .gal-btns button, .contact .container .contact-form button {
   background-color: #1abc9c;
   padding: 1rem 2rem;
+  border: none;
   font-size: 2rem;
   color: #eee;
   position: relative;
   border-radius: 5px;
   z-index: 5;
   overflow: hidden; }
-  .about .container .me .me-wraper a:before, .galary .gal-btns button:before {
+  .about .container .me .me-wraper a:before, .galary .gal-btns button:before, .contact .container .contact-form button:before {
     content: "";
     width: 0%;
     height: 100%;
-    background-color: #344146;
+    background-color: #2a2b2c;
     position: absolute;
     top: 0%;
     left: 50%;
@@ -106,10 +107,48 @@ header .hedr .container nav .menu li:after {
     transform: skew(45deg, 0);
     z-index: -1;
     transition: all 0.5s; }
-  .about .container .me .me-wraper a:hover:before, .galary .gal-btns button:hover:before {
+  .about .container .me .me-wraper a:hover:before, .galary .gal-btns button:hover:before, .contact .container .contact-form button:hover:before {
     visibility: visible;
     width: 200%;
     left: -50%; }
+
+.experience .my h1, .education .edu-intro h1, .contact .container .intro h1 {
+  font-size: 6.4rem;
+  text-transform: uppercase;
+  padding-top: 150px;
+  opacity: 0; }
+  .experience .my h1 span, .education .edu-intro h1 span, .contact .container .intro h1 span {
+    font-family: Helvetica; }
+.experience .my h3, .education .edu-intro h3, .contact .container .intro h3 {
+  font-size: 3rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  padding-top: 150px;
+  opacity: 0; }
+  .experience .my h3 span, .education .edu-intro h3 span, .contact .container .intro h3 span {
+    font-family: Helvetica; }
+
+.contact .container .contact-form input, .contact .container .contact-form textarea {
+  outline: none;
+  border: none;
+  background-color: #111;
+  color: #1abc9c;
+  width: 80%;
+  display: block;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 5px; }
+  .contact .container .contact-form input:focus, .contact .container .contact-form textarea:focus {
+    background-color: #2a2b2c; }
+
+.contact .container .info div i, footer i {
+  width: 7rem;
+  height: 7rem;
+  line-height: 7rem;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 4rem;
+  background-color: #1abc9c; }
 
 html {
   font-size: 10px; }
@@ -118,9 +157,43 @@ html {
     font-family: raleway;
     font-size: 1.6rem;
     font-weight: bold;
-    min-height: 20000;
-    overflow-x: hidden; }
+    overflow: hidden; }
 
+.preloader {
+  background: #1abc9c;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  padding: 0; }
+  .preloader p {
+    font-size: 3.2rem;
+    color: black;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 70%;
+    left: 50%; }
+  .preloader .spiner {
+    border: 0.3rem solid #eee;
+    border-top: 0.3rem solid #2a2b2c;
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    padding: 0;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    animation: lodin 1s infinite linear; }
+
+@keyframes lodin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
 header {
   background-image: linear-gradient(rgba(26, 188, 156, 0.05), rgba(26, 188, 156, 0.2)), url(../images/cover.jpg);
   background-position: center center;
@@ -164,7 +237,7 @@ header {
   header .hedr {
     color: #eee;
     text-transform: uppercase;
-    background-color: rgba(52, 65, 70, 0.9);
+    background-color: rgba(42, 43, 44, 0.9);
     z-index: 10;
     width: 100%; }
     header .hedr .container {
@@ -201,6 +274,8 @@ header {
               width: 100%; }
             header .hedr .container nav .menu li:hover {
               cursor: pointer; }
+          header .hedr .container nav .menu .active-nav:after {
+            width: 100%; }
       header .hedr .container .mob-nav {
         width: 100%;
         display: none; }
@@ -233,7 +308,7 @@ header {
     position: fixed;
     right: 30px;
     bottom: 30px;
-    background-color: #344146;
+    background-color: #2a2b2c;
     transition: all 0.5s ease;
     opacity: 0.75; }
     header .up i {
@@ -248,13 +323,13 @@ header {
 
 .about .container {
   font-family: raleway;
-  color: #344146;
+  color: #2a2b2c;
   max-width: 970px; }
   .about .container h1 {
     opacity: 0;
     margin-top: 150px;
     font-size: 6.4rem;
-    color: #344146; }
+    color: #2a2b2c; }
     .about .container h1 span {
       font-family: Helvetica; }
   .about .container p.text-center {
@@ -299,7 +374,7 @@ header {
 
 .skills {
   margin-top: 7rem;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(../images/mac.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/mac.jpg);
   background-attachment: fixed;
   background-position: center center;
   overflow: hidden; }
@@ -339,20 +414,6 @@ header {
     width: 75%;
     margin: 50 auto;
     text-align: center; }
-    .experience .my h1 {
-      font-size: 6.4rem;
-      text-transform: uppercase;
-      padding-top: 150px;
-      opacity: 0; }
-      .experience .my h1 span {
-        font-family: Helvetica; }
-    .experience .my h3 {
-      text-transform: capitalize;
-      font-weight: 700;
-      padding-top: 150px;
-      opacity: 0; }
-      .experience .my h3 span {
-        font-family: Helvetica; }
     .experience .my p {
       font-size: 1.9rem;
       padding-top: 150px;
@@ -372,20 +433,11 @@ header {
 .education {
   padding-top: 50px; }
   .education .edu-intro h1 {
-    padding-top: 150px;
-    opacity: 0;
-    text-transform: uppercase;
-    font: 4rem Helvetica; }
+    font-family: helvetica; }
     .education .edu-intro h1 span {
-      font: 6.4rem raleway;
-      color: #1abc9c; }
-  .education .edu-intro h3 {
-    padding-top: 150px;
-    opacity: 0;
-    font-size: 3.2rem;
-    font-weight: 700; }
-    .education .edu-intro h3 span {
-      font-family: Helvetica; }
+      font-family: raleway;
+      color: #1abc9c;
+      font-weight: normal; }
 
 .galary {
   padding-top: 50px;
@@ -453,7 +505,7 @@ header {
           margin-left: 3rem; }
         .galary .gal-item .show-tools i:hover {
           cursor: pointer;
-          background-color: #344146; }
+          background-color: #2a2b2c; }
     .galary .gal-item:hover .show-tools {
       opacity: 1; }
       .galary .gal-item:hover .show-tools i {
@@ -531,9 +583,66 @@ header {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    background: #344146; }
+    background: #2a2b2c; }
   .testimonials .carousal .active {
     background-color: #eee; }
+
+.contact {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/contact.jpg);
+  background-attachment: fixed;
+  color: #eee;
+  padding-bottom: 50px;
+  padding-top: 50px; }
+  .contact .container {
+    overflow: hidden;
+    width: 80%; }
+    .contact .container .info {
+      margin-left: -70%;
+      opacity: 0; }
+      .contact .container .info div {
+        margin-bottom: 3rem; }
+        .contact .container .info div i:before {
+          color: #eee; }
+        .contact .container .info div p {
+          display: inline-block;
+          font-family: helvetica;
+          font-weight: lighter; }
+    .contact .container .contact-form {
+      opacity: 0;
+      margin-left: 70%; }
+      .contact .container .contact-form input {
+        height: 6rem; }
+
+footer {
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+  background: #1abc9c; }
+  footer i {
+    background: #eee;
+    overflow: hidden;
+    position: relative;
+    width: 6rem;
+    height: 6rem;
+    transition: all 0.5s ease; }
+    footer i:before {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #1abc9c;
+      font-size: 5rem;
+      height: 100%;
+      width: 100%; }
+    footer i:first-child:before {
+      font-size: 4rem;
+      top: 70%; }
+    footer i:nth-child(2) {
+      top: 90%; }
+    footer i:hover {
+      background-color: #2a2b2c;
+      cursor: pointer; }
+  footer h3 {
+    color: white; }
 
 @media screen and (max-width: 1170px) {
   header .menu li {
@@ -585,7 +694,7 @@ header {
     margin: 30px auto !important; }
 
   .skills {
-    min-height: 900px;
+    min-height: 1000px;
     margin-top: 30px;
     padding-bottom: 50px; }
     .skills .row .tool {
