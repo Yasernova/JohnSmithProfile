@@ -7,10 +7,10 @@ $(document).ready(function(){
       navItem = $('li'),
       preLoad = $('.preloader');
 
-  win.on('load', function(){
+  (function(){
     preLoad.css({'display': 'none'});
     body.css('overflow','auto');
-  });
+  }());
 
   navItem.on('click',function(){
     var navLi = $(this);
